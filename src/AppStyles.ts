@@ -1,4 +1,3 @@
-// src/AppStyles.ts
 import styled from 'styled-components';
 import { FaTwitter, FaInstagram, FaSoundcloud } from 'react-icons/fa';
 import { SiQiita } from 'react-icons/si';
