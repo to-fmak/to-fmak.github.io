@@ -1,4 +1,3 @@
-// src/App.tsx
 import React from 'react';
 import { Container, LeftPanel, RightPanel, Name, Title, Button, Description, SocialIcons, IconLink } from './AppStyles';
 import { FaTwitter, FaInstagram, FaSoundcloud } from 'react-icons/fa';
