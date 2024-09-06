@@ -97,10 +97,11 @@ export const Description = styled.p`
 export const SocialIcons = styled.div`
   display: flex;
   gap: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 
   @media (max-width: 768px) {
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
+    padding-bottom: 25px;
   }
 `;
 
