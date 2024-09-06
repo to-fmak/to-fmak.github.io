@@ -1,7 +1,7 @@
 {
   "name": "Wenzhang",
   "version": "0.1.0",
-  "homepage": "https://to-fmak.github.io/me",
+  "homepage": "http://wenzhang-fmak.com/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
