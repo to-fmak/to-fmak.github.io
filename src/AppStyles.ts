@@ -118,3 +118,26 @@ export const IconLink = styled.a`
     font-size: 1.5rem;
   }
 `;
+
+export const LanguageSwitcher = styled.div`
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1rem;
+  color: #333;
+
+  a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 0.5rem;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #8bc34a;
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
+`;
