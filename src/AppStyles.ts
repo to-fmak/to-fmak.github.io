@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import { FaTwitter, FaInstagram, FaSoundcloud } from 'react-icons/fa';
-import { SiQiita } from 'react-icons/si';
 
 export const Container = styled.div`
   display: flex;
