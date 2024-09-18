@@ -10,7 +10,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/en" element={<Home language="en" />} />
         <Route path="/zh" element={<Home language="zh" />} />
-        <Route path="*" element={<Home language="en" />} /> {/* 默认重定向到英文版本 */}
+        <Route path="*" element={<Home language="en" />} /> 
       </Routes>
     </Router>
   );
@@ -25,7 +25,7 @@ const Home: React.FC<HomeProps> = ({ language }) => {
 
   const handleLanguageSwitch = () => {
     const newLanguage = language === 'en' ? 'zh' : 'en';
-    navigate(`/${newLanguage}`); // 切换到另一种语言的路径
+    navigate(`/${newLanguage}`);
   };
 
   return (
