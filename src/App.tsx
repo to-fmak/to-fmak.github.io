@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
-import { HashRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
-import { Container, LeftPanel, RightPanel, Name, Title, Button, Description, SocialIcons, IconLink, HamburgerMenuContainer, DropdownMenu, MenuItem } from './styles/AppStyles';
-import { FaTwitter, FaInstagram, FaSoundcloud, FaBars } from 'react-icons/fa';
+import React from 'react';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
+import { Container, LeftPanel, RightPanel, Name, Title, Button, Description, SocialIcons, IconLink } from './styles/AppStyles';
+import { FaTwitter, FaInstagram, FaSoundcloud } from 'react-icons/fa';
 import { SiQiita } from 'react-icons/si';
 import GearsPage from './pages/GearsPage';
+import GuitarPage from './pages/GuitarPage';
+import HamburgerMenuContainer from './components/HamburgerMenuContainer';
 
 const App: React.FC = () => {
   return (
@@ -11,42 +13,17 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/gears" element={<GearsPage />} />
-        <Route path="/pets" element={<PetsPage />} />
+        <Route path="/guitars" element={<GuitarPage />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </Router>
   );
 };
 
-const PetsPage: React.FC = () => {
-  return <h1>Pets Page</h1>;
-};
-
 const Home: React.FC = () => {
-  const navigate = useNavigate();
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
-  const handleMenuItemClick = (path: string) => {
-    navigate(path);
-    setMenuOpen(false);
-  };
-
   return (
     <Container>
-        <HamburgerMenuContainer>
-          <FaBars onClick={toggleMenu} />
-          {menuOpen && (
-            <DropdownMenu>
-              <MenuItem onClick={() => handleMenuItemClick('/')}>Home</MenuItem>
-              <MenuItem onClick={() => handleMenuItemClick('/gears')}>Gears</MenuItem>
-              <MenuItem onClick={() => handleMenuItemClick('/pets')}>Pets</MenuItem>
-            </DropdownMenu>
-          )}
-        </HamburgerMenuContainer>
+      <HamburgerMenuContainer />
       <LeftPanel />
       <RightPanel>
         <div>
@@ -56,10 +33,10 @@ const Home: React.FC = () => {
             View GitHub
           </Button>
           <Description>
-              Hi, I'm Wenzhang, a Cloud Platform Engineer and Full Stack Developer based in Japan.
-              I’m also a passionate guitarist and DTM enthusiast.
-              To learn more about my work experience, feel free to visit my GitHub.
-              Don't hesitate to reach out to me through any of the following platforms.
+            Hi, I'm Wenzhang, a Cloud Platform Engineer and Full Stack Developer based in Japan.<br />
+            I’m also a passionate guitarist and DTM enthusiast. <br />
+            To learn more about my work experience, feel free to visit my GitHub.<br />
+            Don't hesitate to reach out to me through any of the following platforms.
           </Description>
         </div>
         <SocialIcons>

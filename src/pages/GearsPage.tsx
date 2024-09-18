@@ -1,54 +1,33 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import {
-  HamburgerMenuContainer,
-  DropdownMenu,
-  MenuItem,
-} from "../styles/AppStyles";
+import React from "react";
 import {
   CardContainer,
   CardImage,
   CardText,
-  GearsPageContainer,
-} from "../styles/GearsPageStyles";
-import { FaBars } from "react-icons/fa";
+  SubPageContainer,
+} from "../styles/SubPageStyles";
+import HamburgerMenuContainer from "../components/HamburgerMenuContainer";
 import keyboardsImage from "../assets/images/gears/keyboards.jpg";
 import iphoneImage from "../assets/images/gears/iphone15.jpg";
 import m2MacImage from "../assets/images/gears/m2-macbook-pro.jpg";
 import subMonitorImage from "../assets/images/gears/sub-monitor.jpg";
 import beatsStudioImage from "../assets/images/gears/beats-studio.jpg";
+import airPodsImage from "../assets/images/gears/airpods.jpg";
+import deskSetUp2023Image from "../assets/images/gears/setup2022-2023.jpg";
+import deskSetUp2024Image from "../assets/images/gears/setup2023-2024.jpg";
 
 const GearsPage: React.FC = () => {
-  const navigate = useNavigate();
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
-  const handleMenuItemClick = (path: string) => {
-    navigate(path);
-    setMenuOpen(false);
-  };
-
   return (
     <div>
-      <HamburgerMenuContainer>
-        <FaBars onClick={toggleMenu} />
-        {menuOpen && (
-          <DropdownMenu>
-            <MenuItem onClick={() => handleMenuItemClick("/")}>Home</MenuItem>
-            <MenuItem onClick={() => handleMenuItemClick("/gears")}>
-              Gears
-            </MenuItem>
-            <MenuItem onClick={() => handleMenuItemClick("/pets")}>
-              Pets
-            </MenuItem>
-          </DropdownMenu>
-        )}
-      </HamburgerMenuContainer>
-
-      <GearsPageContainer>
+      <HamburgerMenuContainer />
+      <SubPageContainer>
+        <CardContainer>
+          <CardImage src={deskSetUp2023Image} alt="Sample" />
+          <CardText>My Desk Setup 2022 ~ 2023</CardText>
+        </CardContainer>
+        <CardContainer>
+          <CardImage src={deskSetUp2024Image} alt="Sample" />
+          <CardText>My Desk Setup 2024 ~</CardText>
+        </CardContainer>
         <CardContainer>
           <CardImage src={iphoneImage} alt="Sample" />
           <CardText>
@@ -82,7 +61,14 @@ const GearsPage: React.FC = () => {
             music.
           </CardText>
         </CardContainer>
-      </GearsPageContainer>
+        <CardContainer>
+          <CardImage src={airPodsImage} alt="Sample" />
+          <CardText>
+            AirPods (2nd generation): I bought them in 2019 and have used them
+            for many years. They are still in use and very durable.
+          </CardText>
+        </CardContainer>
+      </SubPageContainer>
     </div>
   );
 };
