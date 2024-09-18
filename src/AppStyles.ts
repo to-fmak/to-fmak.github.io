@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import localImage from './assets/images/me.jpg';
 
 export const Container = styled.div`
   display: flex;
@@ -15,7 +16,7 @@ export const Container = styled.div`
 
 export const LeftPanel = styled.div`
   flex: 7;
-  background-image: url('https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/2954734/1e81bdda-13ec-cde5-2b81-4ecb192d9eaa.jpeg');
+  background-image: url(${localImage});
   background-size: cover;
   background-position: center;
   height: 100vh;
