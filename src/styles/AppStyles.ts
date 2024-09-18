@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import localImage from './assets/images/me.jpg';
+import localImage from '../assets/images/home/me.jpg';
 
 export const Container = styled.div`
   display: flex;
@@ -122,33 +122,35 @@ export const IconLink = styled.a`
   }
 `;
 
-export const LanguageSwitcher = styled.div`
-  position: absolute;
-  top: 1rem;
-  right: 0.5rem;
-  font-size: 1rem;
-  color: #333;
-  background-color: transparent;
+export const HamburgerMenuContainer = styled.div`
+  position: fixed;
+  top: 1.5rem;
+  right: 2rem;
   z-index: 10;
 
-  button {
-    background: none;
-    border: 2px solid #333;
-    border-radius: 4px;
-    font-size: 1rem;
-    color: #333;
+  svg {
+    font-size: 1.5rem;
     cursor: pointer;
-    padding: 0.5rem;
-    transition: color 0.3s;
-
-    &:hover {
-      color: #8bc34a;
-    }
   }
+`;
 
-  @media (max-width: 768px) {
-    top: 0.5rem;
-    right: 0.5rem;
-    font-size: 0.9rem;
+export const DropdownMenu = styled.div`
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.5rem 0;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+`;
+
+export const MenuItem = styled.div`
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: #f0f0f0;
   }
 `;

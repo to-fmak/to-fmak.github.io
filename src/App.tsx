@@ -1,40 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { HashRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
-import { Container, LeftPanel, RightPanel, Name, Title, Button, Description, SocialIcons, IconLink, LanguageSwitcher } from './AppStyles';
-import { FaTwitter, FaInstagram, FaSoundcloud } from 'react-icons/fa';
+import { Container, LeftPanel, RightPanel, Name, Title, Button, Description, SocialIcons, IconLink, HamburgerMenuContainer, DropdownMenu, MenuItem } from './styles/AppStyles';
+import { FaTwitter, FaInstagram, FaSoundcloud, FaBars } from 'react-icons/fa';
 import { SiQiita } from 'react-icons/si';
+import GearsPage from './pages/GearsPage';
 
 const App: React.FC = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/en" element={<Home language="en" />} />
-        <Route path="/zh" element={<Home language="zh" />} />
-        <Route path="*" element={<Home language="en" />} /> 
+        <Route path="/home" element={<Home />} />
+        <Route path="/gears" element={<GearsPage />} />
+        <Route path="/pets" element={<PetsPage />} />
+        <Route path="*" element={<Home />} />
       </Routes>
     </Router>
   );
 };
 
-interface HomeProps {
-  language: string;
-}
+const PetsPage: React.FC = () => {
+  return <h1>Pets Page</h1>;
+};
 
-const Home: React.FC<HomeProps> = ({ language }) => {
+const Home: React.FC = () => {
   const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleLanguageSwitch = () => {
-    const newLanguage = language === 'en' ? 'zh' : 'en';
-    navigate(`/${newLanguage}`);
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const handleMenuItemClick = (path: string) => {
+    navigate(path);
+    setMenuOpen(false);
   };
 
   return (
     <Container>
-      <LanguageSwitcher>
-        <button onClick={handleLanguageSwitch}>
-          {language === 'en' ? 'EN / 中' : '中 / EN'}
-        </button>
-      </LanguageSwitcher>
+        <HamburgerMenuContainer>
+          <FaBars onClick={toggleMenu} />
+          {menuOpen && (
+            <DropdownMenu>
+              <MenuItem onClick={() => handleMenuItemClick('/')}>Home</MenuItem>
+              <MenuItem onClick={() => handleMenuItemClick('/gears')}>Gears</MenuItem>
+              <MenuItem onClick={() => handleMenuItemClick('/pets')}>Pets</MenuItem>
+            </DropdownMenu>
+          )}
+        </HamburgerMenuContainer>
       <LeftPanel />
       <RightPanel>
         <div>
@@ -44,9 +56,10 @@ const Home: React.FC<HomeProps> = ({ language }) => {
             View GitHub
           </Button>
           <Description>
-            {language === 'en'
-              ? "Hi, I'm Wenzhang, a Cloud Platform Engineer and Full Stack Developer based in Japan.\nI’m also a passionate guitarist and DTM enthusiast.\nTo learn more about my work experience, feel free to visit my GitHub.\nDon't hesitate to reach out to me through any of the following platforms."
-              : "你好，我是Wenzhang，一位云平台工程师和全栈开发者，居住在日本。\n我同样是一名充满激情的吉他手和DTM的爱好者。\n想了解更多关于我的工作经历，请访问我的 GitHub。\n欢迎通过以下平台与我联系。"}
+              Hi, I'm Wenzhang, a Cloud Platform Engineer and Full Stack Developer based in Japan.
+              I’m also a passionate guitarist and DTM enthusiast.
+              To learn more about my work experience, feel free to visit my GitHub.
+              Don't hesitate to reach out to me through any of the following platforms.
           </Description>
         </div>
         <SocialIcons>
