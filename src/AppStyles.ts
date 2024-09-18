@@ -6,6 +6,7 @@ export const Container = styled.div`
   height: 100vh;
   font-family: 'Arial', sans-serif;
   color: #333;
+  position: relative;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -29,15 +30,18 @@ export const LeftPanel = styled.div`
 export const RightPanel = styled.div`
   flex: 3;
   padding: 2rem;
+  padding-bottom: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
   background-color: #fafafa;
+  position: relative;
 
   @media (max-width: 768px) {
     height: 50%;
     padding: 1rem;
+    padding-bottom: 4rem;
   }
 `;
 
@@ -120,14 +124,20 @@ export const IconLink = styled.a`
 export const LanguageSwitcher = styled.div`
   position: absolute;
   top: 1rem;
-  right: 1rem;
+  right: 0.5rem;
   font-size: 1rem;
   color: #333;
+  background-color: transparent;
+  z-index: 10;
 
-  a {
-    text-decoration: none;
+  button {
+    background: none;
+    border: 2px solid #333;
+    border-radius: 4px;
+    font-size: 1rem;
     color: #333;
-    margin: 0 0.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
     transition: color 0.3s;
 
     &:hover {
@@ -136,6 +146,8 @@ export const LanguageSwitcher = styled.div`
   }
 
   @media (max-width: 768px) {
+    top: 0.5rem;
+    right: 0.5rem;
     font-size: 0.9rem;
   }
 `;
