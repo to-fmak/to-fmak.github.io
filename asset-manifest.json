@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.00707d3a.js",
+    "main.js": "/static/js/main.4b13332a.js",
     "static/media/04.jpg": "/static/media/04.d7186209857eab254830.jpg",
     "static/media/02.jpg": "/static/media/02.24e14722163b0a033504.jpg",
     "static/media/keyboards.jpg": "/static/media/keyboards.87e9fec31a3fc7764cb4.jpg",
@@ -14,6 +14,7 @@
     "static/media/07.jpg": "/static/media/07.562eb96faa08b32cd37e.jpg",
     "static/media/airpods.jpg": "/static/media/airpods.35a4a316146f74b5ea46.jpg",
     "static/media/05.jpg": "/static/media/05.8e4c7eeefb6b7cbfba74.jpg",
+    "static/media/fmak_minori.jpg": "/static/media/fmak_minori.972530990a5236308f7c.jpg",
     "static/media/06.jpg": "/static/media/06.84bcc6cb0b26f6b409e5.jpg",
     "static/media/01.jpg": "/static/media/01.06a3cc324d26139f7831.jpg",
     "static/media/sub-monitor.jpg": "/static/media/sub-monitor.a090acefdd42bac42531.jpg",
@@ -22,10 +23,10 @@
     "static/media/me.jpg": "/static/media/me.8a31b04ea61fe45aae5c.jpg",
     "index.html": "/index.html",
     "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.00707d3a.js.map": "/static/js/main.00707d3a.js.map"
+    "main.4b13332a.js.map": "/static/js/main.4b13332a.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.00707d3a.js"
+    "static/js/main.4b13332a.js"
   ]
 }
