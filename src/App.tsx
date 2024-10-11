@@ -6,6 +6,7 @@ import { SiQiita } from 'react-icons/si';
 import GearsPage from './pages/GearsPage';
 import GuitarPage from './pages/GuitarPage';
 import LifePage from './pages/LifePage';
+import VideoPage from './pages/VideoPage';
 import HamburgerMenuContainer from './components/HamburgerMenuContainer';
 
 const App: React.FC = () => {
@@ -16,6 +17,7 @@ const App: React.FC = () => {
         <Route path="/gears" element={<GearsPage />} />
         <Route path="/guitars" element={<GuitarPage />} />
         <Route path="/life" element={<LifePage />} />
+        <Route path="/videos" element={<VideoPage />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </Router>
