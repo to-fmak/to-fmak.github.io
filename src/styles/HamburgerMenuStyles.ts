@@ -7,15 +7,20 @@ export const HamburgerMenuContainerWrapper = styled.div`
   z-index: 20;
 
   svg {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     cursor: pointer;
   }
 
   @media (max-width: 768px) {
     top: 0.5rem;
     right: 0.5rem;
+
     svg {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
+      border: 2px solid #333;
+      border-radius: 8px;
+      padding: 4px;
+      background-color: #fff;
     }
   }
 `;
