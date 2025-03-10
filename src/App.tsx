@@ -44,9 +44,6 @@ const Home: React.FC = () => {
           </Description>
         </div>
         <SocialIcons>
-          <IconLink href="https://x.com/to__fmak" target="_blank" rel="noopener noreferrer">
-            <FaTwitter />
-          </IconLink>
           <IconLink href="https://qiita.com/to-fmak" target="_blank" rel="noopener noreferrer">
             <SiQiita />
           </IconLink>
