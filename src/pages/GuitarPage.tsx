@@ -6,6 +6,7 @@ import {
   SubPageContainer,
 } from "../styles/SubPageStyles";
 import HamburgerMenuContainer from "../components/HamburgerMenuContainer";
+import guitar00 from "../assets/images/guitars/00.jpg";
 import guitar01 from "../assets/images/guitars/01.jpg";
 import guitar02 from "../assets/images/guitars/02.jpg";
 import guitar03 from "../assets/images/guitars/03.jpg";
@@ -21,6 +22,10 @@ const GearsPage: React.FC = () => {
     <div>
       <HamburgerMenuContainer />
       <SubPageContainer>
+        <CardContainer>
+          <CardImage src={guitar00} alt="Sample" />
+        <CardText>Martin D-28 Street Legend(2025~)</CardText>
+        </CardContainer>
         <CardContainer>
           <CardImage src={guitar01} alt="Sample" />
           <CardText>PRS(2024~)</CardText>

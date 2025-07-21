@@ -1,12 +1,11 @@
 import React from 'react';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import { Container, LeftPanel, RightPanel, Name, Title, Button, Description, SocialIcons, IconLink } from './styles/AppStyles';
-import { FaTwitter, FaInstagram, FaSoundcloud } from 'react-icons/fa';
+import { FaInstagram, FaSoundcloud } from 'react-icons/fa';
 import { SiQiita } from 'react-icons/si';
 import GearsPage from './pages/GearsPage';
 import GuitarPage from './pages/GuitarPage';
 import LifePage from './pages/LifePage';
-import VideoPage from './pages/VideoPage';
 import HamburgerMenuContainer from './components/HamburgerMenuContainer';
 
 const App: React.FC = () => {
@@ -17,7 +16,6 @@ const App: React.FC = () => {
         <Route path="/gears" element={<GearsPage />} />
         <Route path="/guitars" element={<GuitarPage />} />
         <Route path="/life" element={<LifePage />} />
-        <Route path="/videos" element={<VideoPage />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </Router>
@@ -37,7 +35,7 @@ const Home: React.FC = () => {
             View GitHub
           </Button>
           <Description>
-            Hi, I'm Wenzhang, a Cloud Platform Engineer and Full Stack Developer based in Japan.<br />
+            Hi, I'm Wenzhang, also known as Fumiaki (my Japanese wife calls me "Fumi-kun"), a Cloud Platform Engineer and Full Stack Developer based in Japan.<br />
             I’m also a passionate guitarist and DTM enthusiast. <br />
             To learn more about my work experience, feel free to visit my GitHub.<br />
             Don't hesitate to reach out to me through any of the following platforms.

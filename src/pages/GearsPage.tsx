@@ -14,6 +14,7 @@ import beatsStudioImage from "../assets/images/gears/beats-studio.jpg";
 import airPodsImage from "../assets/images/gears/airpods.jpg";
 import deskSetUp2023Image from "../assets/images/gears/setup2022-2023.jpg";
 import deskSetUp2024Image from "../assets/images/gears/setup2023-2024.jpg";
+import deskSetUp2025Image from "../assets/images/gears/setup2025.png";
 
 const GearsPage: React.FC = () => {
   return (
@@ -21,18 +22,22 @@ const GearsPage: React.FC = () => {
       <HamburgerMenuContainer />
       <SubPageContainer>
         <CardContainer>
-          <CardImage src={deskSetUp2023Image} alt="Sample" />
-          <CardText>My Desk Setup 2022 ~ 2023</CardText>
+          <CardImage src={deskSetUp2025Image} alt="Sample" />
+          <CardText>My Desk Setup 2025 ~ </CardText>
         </CardContainer>
         <CardContainer>
           <CardImage src={deskSetUp2024Image} alt="Sample" />
           <CardText>My Desk Setup 2024 ~</CardText>
         </CardContainer>
         <CardContainer>
+          <CardImage src={deskSetUp2023Image} alt="Sample" />
+          <CardText>My Desk Setup 2022 ~ 2023</CardText>
+        </CardContainer>
+        <CardContainer>
           <CardImage src={iphoneImage} alt="Sample" />
           <CardText>
             iPhone: I've been an Apple user for over 10 years and am currently
-            using the iPhone 15 Pro Max.
+            using the iPhone 16 Pro.
           </CardText>
         </CardContainer>
         <CardContainer>
