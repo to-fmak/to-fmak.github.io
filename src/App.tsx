@@ -3,6 +3,7 @@ import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import { Container, LeftPanel, RightPanel, Name, Title, Button, Description, SocialIcons, IconLink } from './styles/AppStyles';
 import { FaInstagram, FaSoundcloud } from 'react-icons/fa';
 import { SiQiita } from 'react-icons/si';
+import { SiZenn } from 'react-icons/si';
 import GearsPage from './pages/GearsPage';
 import GuitarPage from './pages/GuitarPage';
 import LifePage from './pages/LifePage';
@@ -35,15 +36,18 @@ const Home: React.FC = () => {
             View GitHub
           </Button>
           <Description>
-            Hi, I'm Wenzhang, also known as Fumiaki (my Japanese wife calls me "Fumi-kun"), a Cloud Platform Engineer and Full Stack Developer based in Japan.<br />
+            Hi, I'm Wenzhang, also known as Fumiaki, a Cloud DevOps Engineer and Full Stack Developer based in Japan.<br />
             I’m also a passionate guitarist and DTM enthusiast. <br />
-            To learn more about my work experience, feel free to visit my GitHub.<br />
+            To learn more about my work experience, feel free to visit my GitHub and tech blogs.<br />
             Don't hesitate to reach out to me through any of the following platforms.
           </Description>
         </div>
         <SocialIcons>
           <IconLink href="https://qiita.com/to-fmak" target="_blank" rel="noopener noreferrer">
             <SiQiita />
+          </IconLink>
+          <IconLink href="https://zenn.dev/to_fmak" target="_blank" rel="noopener noreferrer">
+            <SiZenn />
           </IconLink>
           <IconLink href="https://www.instagram.com/fmak_t?igsh=dmdtbHV3dDQ1NDUy&utm_source=qr" target="_blank" rel="noopener noreferrer">
             <FaInstagram />
