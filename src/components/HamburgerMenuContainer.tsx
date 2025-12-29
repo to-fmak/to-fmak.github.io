@@ -24,7 +24,6 @@ const HamburgerMenuContainer: React.FC = () => {
           <MenuItem onClick={() => handleMenuItemClick('/')}>Home</MenuItem>
           <MenuItem onClick={() => handleMenuItemClick('/gears')}>Gears</MenuItem>
           <MenuItem onClick={() => handleMenuItemClick('/guitars')}>Guitars</MenuItem>
-          <MenuItem onClick={() => handleMenuItemClick('/life')}>Life</MenuItem>
         </DropdownMenu>
       )}
     </HamburgerMenuContainerWrapper>
