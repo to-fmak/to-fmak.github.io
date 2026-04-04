@@ -1,4 +1,15 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const slideDown = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 export const HamburgerMenuContainerWrapper = styled.div`
   position: fixed;
@@ -33,6 +44,7 @@ export const DropdownMenu = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   z-index: 10;
+  animation: ${slideDown} 0.2s ease forwards;
 `;
 
 export const MenuItem = styled.div`

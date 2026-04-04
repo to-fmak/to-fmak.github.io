@@ -6,6 +6,7 @@ import {
   SubPageContainer,
 } from "../styles/SubPageStyles";
 import HamburgerMenuContainer from "../components/HamburgerMenuContainer";
+import AnimatedCard from "../components/AnimatedCard";
 import guitar00 from "../assets/images/guitars/00.jpg";
 import guitar01 from "../assets/images/guitars/01.jpg";
 import guitar02 from "../assets/images/guitars/02.jpg";
@@ -22,58 +23,58 @@ const GearsPage: React.FC = () => {
     <div>
       <HamburgerMenuContainer />
       <SubPageContainer>
-        <CardContainer>
+        <AnimatedCard><CardContainer>
           <CardImage src={guitar00} alt="Sample" />
         <CardText>Martin D-28 Street Legend(2025~)</CardText>
-        </CardContainer>
-        <CardContainer>
+        </CardContainer></AnimatedCard>
+        <AnimatedCard><CardContainer>
           <CardImage src={guitar01} alt="Sample" />
           <CardText>PRS(2024~)</CardText>
-        </CardContainer>
-        <CardContainer>
+        </CardContainer></AnimatedCard>
+        <AnimatedCard><CardContainer>
           <CardImage src={guitar02} alt="Sample" />
           <CardText>Yamaha Mini Guitar(2018~)</CardText>
-        </CardContainer>
-        <CardContainer>
+        </CardContainer></AnimatedCard>
+        <AnimatedCard><CardContainer>
           <CardImage src={guitar03} alt="Sample" />
           <CardText>
             Gibson USA(2018~2023)
           </CardText>
-        </CardContainer>
-        <CardContainer>
+        </CardContainer></AnimatedCard>
+        <AnimatedCard><CardContainer>
           <CardImage src={guitar04} alt="Sample" />
           <CardText>
             Fender Stratocaster Japan(2017~2019)
           </CardText>
-        </CardContainer>
-        <CardContainer>
+        </CardContainer></AnimatedCard>
+        <AnimatedCard><CardContainer>
           <CardImage src={guitar05} alt="Sample" />
           <CardText>
             Fender Telecaster Japan(2016~2017)
           </CardText>
-        </CardContainer>
-        <CardContainer>
+        </CardContainer></AnimatedCard>
+        <AnimatedCard><CardContainer>
           <CardImage src={guitar06} alt="Sample" />
           <CardText>Yeah Man!</CardText>
-        </CardContainer>
-        <CardContainer>
+        </CardContainer></AnimatedCard>
+        <AnimatedCard><CardContainer>
           <CardImage src={guitar07} alt="Sample" />
           <CardText>
             Some Old Stuffs 
           </CardText>
-        </CardContainer>
-        <CardContainer>
+        </CardContainer></AnimatedCard>
+        <AnimatedCard><CardContainer>
           <CardImage src={guitar08} alt="Sample" />
           <CardText>
            Guitar And Watches 
           </CardText>
-        </CardContainer>
-        <CardContainer>
+        </CardContainer></AnimatedCard>
+        <AnimatedCard><CardContainer>
           <CardImage src={guitar09} alt="Sample" />
           <CardText>
             Kelord And I(2014) I Miss You Bro.
           </CardText>
-        </CardContainer>
+        </CardContainer></AnimatedCard>
       </SubPageContainer>
     </div>
   );

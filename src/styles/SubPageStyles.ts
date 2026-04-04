@@ -11,20 +11,14 @@ export const CardContainer = styled.div`
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 90%;
-  max-width: 300px;
-
-  @media (min-width: 768px) {
-    width: 45%;
-    max-width: 400px;
-  }
+  max-width: 420px;
 `;
 
 export const CardImage = styled.img`
   width: 100%;
   height: auto;
   border-radius: 8px;
-  object-fit: cover;
-  max-height: 250px;
+  object-fit: contain;
 `;
 
 export const CardText = styled.div`
@@ -40,9 +34,6 @@ export const SubPageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   padding: 1rem;
-  overflow-y: auto;
   box-sizing: border-box;
-  white-space: nowrap;
 `;
