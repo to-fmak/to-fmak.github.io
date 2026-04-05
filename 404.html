@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Single Page App</title>
+  <script type="text/javascript">
+    var pathname = window.location.pathname;
+    if (pathname !== '/' && !pathname.match(/^\/index\.html/)) {
+      window.location.replace('/?redirect=' + encodeURIComponent(pathname));
+    }
+  </script>
+</head>
+<body></body>
+</html>
