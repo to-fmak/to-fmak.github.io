@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion, type Transition } from 'framer-motion';
 import { Container, LeftPanel, RightPanel, Name, Title, Button, Description, SocialIcons, IconLink } from './styles/AppStyles';
 import { FaInstagram, FaSoundcloud } from 'react-icons/fa';
@@ -68,7 +68,7 @@ const Home: React.FC = () => {
             View GitHub
           </Button>
           <Description>
-            Hi, I'm Wenzhang, also known as Fumiaki, a Cloud DevOps Engineer and Full Stack Developer based in Japan.<br />
+            Hi, I'm Wenzhang, a Cloud DevOps Engineer and Full Stack Developer based in Japan.<br />
             I'm also a passionate guitarist and DTM enthusiast. <br />
             To learn more about my work experience, feel free to visit my GitHub and tech blogs.<br />
             Don't hesitate to reach out to me through any of the following platforms.
