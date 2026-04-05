@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion, type Transition } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Container, LeftPanel, RightPanel, Name, Title, Button, Description, SocialIcons, IconLink } from './styles/AppStyles';
 import { FaInstagram, FaSoundcloud } from 'react-icons/fa';
 import { SiQiita } from 'react-icons/si';
@@ -56,6 +57,8 @@ const App: React.FC = () => {
 };
 
 const Home: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <Container>
       <HamburgerMenuContainer />
@@ -63,15 +66,12 @@ const Home: React.FC = () => {
       <RightPanel>
         <div>
           <Name>Wenzhang</Name>
-          <Title>Software Engineer</Title>
+          <Title>{t('home.title')}</Title>
           <Button href="https://github.com/to-fmak" target="_blank" rel="noopener noreferrer">
-            View GitHub
+            {t('home.viewGithub')}
           </Button>
           <Description>
-            Hi, I'm Wenzhang, a Cloud DevOps Engineer and Full Stack Developer based in Japan.<br />
-            I'm also a passionate guitarist and DTM enthusiast. <br />
-            To learn more about my work experience, feel free to visit my GitHub and tech blogs.<br />
-            Don't hesitate to reach out to me through any of the following platforms.
+            {t('home.description')}
           </Description>
         </div>
         <SocialIcons>

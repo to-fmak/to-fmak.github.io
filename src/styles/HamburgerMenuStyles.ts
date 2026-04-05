@@ -55,3 +55,32 @@ export const MenuItem = styled.div`
     background-color: #f0f0f0;
   }
 `;
+
+export const MenuDivider = styled.div`
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 0.5rem 0;
+`;
+
+export const LanguageOptions = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+`;
+
+export const LangOption = styled.button<{ $active: boolean }>`
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: ${(props) => (props.$active ? '600' : '400')};
+  color: ${(props) => (props.$active ? '#333' : '#999')};
+  transition: color 0.2s ease;
+  white-space: nowrap;
+
+  &:hover {
+    color: #333;
+  }
+`;

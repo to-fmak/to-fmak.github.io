@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import {
   CardContainer,
   CardImage,
@@ -19,60 +20,62 @@ import guitar08 from "../assets/images/guitars/08.jpg";
 import guitar09 from "../assets/images/guitars/09.jpg";
 
 const GearsPage: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <div>
       <HamburgerMenuContainer />
       <SubPageContainer>
         <AnimatedCard><CardContainer>
           <CardImage src={guitar00} alt="Sample" />
-        <CardText>Martin D-28 Street Legend(2025~)</CardText>
+        <CardText>{t("guitars.g00")}</CardText>
         </CardContainer></AnimatedCard>
         <AnimatedCard><CardContainer>
           <CardImage src={guitar01} alt="Sample" />
-          <CardText>PRS(2024~)</CardText>
+          <CardText>{t("guitars.g01")}</CardText>
         </CardContainer></AnimatedCard>
         <AnimatedCard><CardContainer>
           <CardImage src={guitar02} alt="Sample" />
-          <CardText>Yamaha Mini Guitar(2018~)</CardText>
+          <CardText>{t("guitars.g02")}</CardText>
         </CardContainer></AnimatedCard>
         <AnimatedCard><CardContainer>
           <CardImage src={guitar03} alt="Sample" />
           <CardText>
-            Gibson USA(2018~2023)
+            {t("guitars.g03")}
           </CardText>
         </CardContainer></AnimatedCard>
         <AnimatedCard><CardContainer>
           <CardImage src={guitar04} alt="Sample" />
           <CardText>
-            Fender Stratocaster Japan(2017~2019)
+            {t("guitars.g04")}
           </CardText>
         </CardContainer></AnimatedCard>
         <AnimatedCard><CardContainer>
           <CardImage src={guitar05} alt="Sample" />
           <CardText>
-            Fender Telecaster Japan(2016~2017)
+            {t("guitars.g05")}
           </CardText>
         </CardContainer></AnimatedCard>
         <AnimatedCard><CardContainer>
           <CardImage src={guitar06} alt="Sample" />
-          <CardText>Yeah Man!</CardText>
+          <CardText>{t("guitars.g06")}</CardText>
         </CardContainer></AnimatedCard>
         <AnimatedCard><CardContainer>
           <CardImage src={guitar07} alt="Sample" />
           <CardText>
-            Some Old Stuffs 
+            {t("guitars.g07")}
           </CardText>
         </CardContainer></AnimatedCard>
         <AnimatedCard><CardContainer>
           <CardImage src={guitar08} alt="Sample" />
           <CardText>
-           Guitar And Watches 
+           {t("guitars.g08")}
           </CardText>
         </CardContainer></AnimatedCard>
         <AnimatedCard><CardContainer>
           <CardImage src={guitar09} alt="Sample" />
           <CardText>
-            Kelord And I(2014) I Miss You Bro.
+            {t("guitars.g09")}
           </CardText>
         </CardContainer></AnimatedCard>
       </SubPageContainer>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import {
   CardContainer,
   CardImage,
@@ -18,60 +19,56 @@ import deskSetUp2024Image from "../assets/images/gears/setup2023-2024.jpg";
 import deskSetUp2025Image from "../assets/images/gears/setup2025.png";
 
 const GearsPage: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <div>
       <HamburgerMenuContainer />
       <SubPageContainer>
         <AnimatedCard><CardContainer>
           <CardImage src={deskSetUp2025Image} alt="Sample" />
-          <CardText>My Desk Setup 2025 ~ </CardText>
+          <CardText>{t("gears.setup2025")}</CardText>
         </CardContainer></AnimatedCard>
         <AnimatedCard><CardContainer>
           <CardImage src={deskSetUp2024Image} alt="Sample" />
-          <CardText>My Desk Setup 2024 ~</CardText>
+          <CardText>{t("gears.setup2024")}</CardText>
         </CardContainer></AnimatedCard>
         <AnimatedCard><CardContainer>
           <CardImage src={deskSetUp2023Image} alt="Sample" />
-          <CardText>My Desk Setup 2022 ~ 2023</CardText>
+          <CardText>{t("gears.setup2023")}</CardText>
         </CardContainer></AnimatedCard>
         <AnimatedCard><CardContainer>
           <CardImage src={iphoneImage} alt="Sample" />
           <CardText>
-            iPhone: I've been an Apple user for over 10 years and am currently
-            using the iPhone 16 Pro.
+            {t("gears.iphone")}
           </CardText>
         </CardContainer></AnimatedCard>
         <AnimatedCard><CardContainer>
           <CardImage src={keyboardsImage} alt="Sample" />
           <CardText>
-            Keychron K2V2 and K3: The K2V2 has red switches, while the K3 has
-            brown switches. Personally, I prefer the typing feel of the K2V2.
+            {t("gears.keyboards")}
           </CardText>
         </CardContainer></AnimatedCard>
         <AnimatedCard><CardContainer>
           <CardImage src={m2MacImage} alt="Sample" />
           <CardText>
-            M2 Pro MacBook: I’ve always used Macs for development. Currently, my
-            company provides an M3 Pro MacBook, which has higher specs than my
-            personal MacBook.
+            {t("gears.macbook")}
           </CardText>
         </CardContainer></AnimatedCard>
         <AnimatedCard><CardContainer>
           <CardImage src={subMonitorImage} alt="Sample" />
-          <CardText>Portable screen: I don't use it much now.</CardText>
+          <CardText>{t("gears.monitor")}</CardText>
         </CardContainer></AnimatedCard>
         <AnimatedCard><CardContainer>
           <CardImage src={beatsStudioImage} alt="Sample" />
           <CardText>
-            Beats Studio: I frequently use them for listening to and creating
-            music.
+            {t("gears.beats")}
           </CardText>
         </CardContainer></AnimatedCard>
         <AnimatedCard><CardContainer>
           <CardImage src={airPodsImage} alt="Sample" />
           <CardText>
-            AirPods (2nd generation): I bought them in 2019 and have used them
-            for many years. They are still in use and very durable.
+            {t("gears.airpods")}
           </CardText>
         </CardContainer></AnimatedCard>
       </SubPageContainer>
