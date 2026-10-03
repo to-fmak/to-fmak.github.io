@@ -17,9 +17,13 @@ const resources = {
           "Hi, I'm Wenzhang, a Cloud DevOps Engineer and Full Stack Developer based in Japan. I'm also a passionate guitarist and DTM enthusiast. To learn more about my work experience, feel free to visit my GitHub and tech blogs. Don't hesitate to reach out to me through any of the following platforms.",
       },
       gears: {
+        setup2026: 'My Desk Setup 2026 ~',
         setup2025: 'My Desk Setup 2025 ~ ',
         setup2024: 'My Desk Setup 2024 ~',
         setup2023: 'My Desk Setup 2022 ~ 2023',
+        studioDisplay:
+          "Studio Display (2026): The picture is stunning, and the built-in speakers sound great. I'd been using a 2K monitor for a long time, and switching to 5K has made everything so much more comfortable to look at.",
+        ergotron: 'Ergotron LX: My monitor arm. It is sturdy and very durable.',
         iphone:
           "iPhone: I've been an Apple user for over 10 years and am currently using the iPhone 16 Pro.",
         keyboards:
@@ -60,9 +64,13 @@ const resources = {
           '我是Wenzhang，一名常驻日本的云 DevOps 工程师和全栈开发者。我也是一名充满激情的吉他手和 DTM 爱好者。欲了解更多关于我的工作经验，欢迎访问我的 GitHub 和技术博客。随时可以通过以下任何平台与我联系。',
       },
       gears: {
+        setup2026: '我的桌面设置 2026 ~',
         setup2025: '我的桌面设置 2025 ~ ',
         setup2024: '我的桌面设置 2024 ~',
         setup2023: '我的桌面设置 2022 ~ 2023',
+        studioDisplay:
+          'Studio Display（2026 款）：画面非常漂亮，内置音响的音效也很好。我之前一直用一台 2K 的显示器，换到 5K 后看着非常舒服。',
+        ergotron: 'Ergotron LX：显示器支臂，非常结实耐用。',
         iphone:
           '苹果老用户了，已使用 Apple 产品超过 10 年，目前使用 iPhone 16 Pro。',
         keyboards:

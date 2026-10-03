@@ -17,6 +17,9 @@ import airPodsImage from "../assets/images/gears/airpods.jpg";
 import deskSetUp2023Image from "../assets/images/gears/setup2022-2023.jpg";
 import deskSetUp2024Image from "../assets/images/gears/setup2023-2024.jpg";
 import deskSetUp2025Image from "../assets/images/gears/setup2025.png";
+import deskSetUp2026Image from "../assets/images/gears/setup2026.jpg";
+import studioDisplayImage from "../assets/images/gears/studio-display2026.jpg";
+import ergotronImage from "../assets/images/gears/ergotron-lx.jpg";
 
 const GearsPage: React.FC = () => {
   const { t } = useTranslation();
@@ -25,6 +28,10 @@ const GearsPage: React.FC = () => {
     <div>
       <HamburgerMenuContainer />
       <SubPageContainer>
+        <AnimatedCard><CardContainer>
+          <CardImage src={deskSetUp2026Image} alt="Sample" />
+          <CardText>{t("gears.setup2026")}</CardText>
+        </CardContainer></AnimatedCard>
         <AnimatedCard><CardContainer>
           <CardImage src={deskSetUp2025Image} alt="Sample" />
           <CardText>{t("gears.setup2025")}</CardText>
@@ -36,6 +43,18 @@ const GearsPage: React.FC = () => {
         <AnimatedCard><CardContainer>
           <CardImage src={deskSetUp2023Image} alt="Sample" />
           <CardText>{t("gears.setup2023")}</CardText>
+        </CardContainer></AnimatedCard>
+        <AnimatedCard><CardContainer>
+          <CardImage src={studioDisplayImage} alt="Sample" />
+          <CardText>
+            {t("gears.studioDisplay")}
+          </CardText>
+        </CardContainer></AnimatedCard>
+        <AnimatedCard><CardContainer>
+          <CardImage src={ergotronImage} alt="Sample" />
+          <CardText>
+            {t("gears.ergotron")}
+          </CardText>
         </CardContainer></AnimatedCard>
         <AnimatedCard><CardContainer>
           <CardImage src={iphoneImage} alt="Sample" />
