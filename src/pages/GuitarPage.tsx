@@ -19,7 +19,7 @@ import guitar07 from "../assets/images/guitars/07.jpg";
 import guitar08 from "../assets/images/guitars/08.jpg";
 import guitar09 from "../assets/images/guitars/09.jpg";
 
-const GearsPage: React.FC = () => {
+const GuitarPage: React.FC = () => {
   const { t } = useTranslation();
 
   return (
@@ -83,4 +83,4 @@ const GearsPage: React.FC = () => {
   );
 };
 
-export default GearsPage;
+export default GuitarPage;

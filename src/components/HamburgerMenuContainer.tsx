@@ -28,10 +28,10 @@ const HamburgerMenuContainer: React.FC = () => {
           <MenuItem onClick={() => handleMenuItemClick('/guitars')}>{t('nav.guitars')}</MenuItem>
           <MenuDivider />
           <LanguageOptions>
-            <LangOption $active={i18n.language === 'en'} onClick={() => i18n.changeLanguage('en')}>
+            <LangOption $active={i18n.resolvedLanguage === 'en'} onClick={() => i18n.changeLanguage('en')}>
               EN
             </LangOption>
-            <LangOption $active={i18n.language === 'zh'} onClick={() => i18n.changeLanguage('zh')}>
+            <LangOption $active={i18n.resolvedLanguage === 'zh'} onClick={() => i18n.changeLanguage('zh')}>
               中文
             </LangOption>
           </LanguageOptions>

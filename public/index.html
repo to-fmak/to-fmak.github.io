@@ -10,6 +10,15 @@
       content="Wenzhang's Home Page"
     />
     <title>Wenzhang's Home Page</title>
+    <script type="text/javascript">
+      // Restore the deep link that public/404.html turned into /?redirect=<path>
+      (function () {
+        var redirect = new URLSearchParams(window.location.search).get('redirect');
+        if (redirect && redirect.charAt(0) === '/' && redirect.charAt(1) !== '/') {
+          window.history.replaceState(null, '', redirect);
+        }
+      })();
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

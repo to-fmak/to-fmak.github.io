@@ -1,9 +1,22 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
+import i18n from './i18n';
 import App from './App';
 
-test('renders learn react link', () => {
+beforeEach(async () => {
+  await i18n.changeLanguage('en');
+});
+
+test('renders the home page', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByText('Wenzhang')).toBeInTheDocument();
+  expect(screen.getByText('Software Engineer')).toBeInTheDocument();
+});
+
+test('switches to Chinese and remembers the choice', async () => {
+  render(<App />);
+  await act(async () => {
+    await i18n.changeLanguage('zh');
+  });
+  expect(screen.getByText('软件工程师')).toBeInTheDocument();
+  expect(localStorage.getItem('i18nextLng')).toBe('zh');
 });
