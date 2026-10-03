@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <title>Single Page App</title>
   <script type="text/javascript">
-    var pathname = window.location.pathname;
-    if (pathname !== '/' && !pathname.match(/^\/index\.html/)) {
-      window.location.replace('/?redirect=' + encodeURIComponent(pathname));
+    var l = window.location;
+    if (l.pathname !== '/' && !l.pathname.match(/^\/index\.html/)) {
+      l.replace('/?redirect=' + encodeURIComponent(l.pathname + l.search + l.hash));
     }
   </script>
 </head>
