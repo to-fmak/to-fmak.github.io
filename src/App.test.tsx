@@ -8,7 +8,7 @@ beforeEach(async () => {
 
 test('renders the home page', () => {
   render(<App />);
-  expect(screen.getByText('Wenzhang')).toBeInTheDocument();
+  expect(screen.getByRole('heading', { level: 1, name: 'Wenzhang' })).toBeInTheDocument();
   expect(screen.getByText('Software Engineer')).toBeInTheDocument();
 });
 

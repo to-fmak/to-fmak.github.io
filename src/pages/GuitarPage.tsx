@@ -2,11 +2,13 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import {
   CardContainer,
+  CardGrid,
   CardImage,
   CardText,
-  SubPageContainer,
+  PageHeader,
+  PageIntro,
+  PageTitle,
 } from "../styles/SubPageStyles";
-import HamburgerMenuContainer from "../components/HamburgerMenuContainer";
 import AnimatedCard from "../components/AnimatedCard";
 import guitar00 from "../assets/images/guitars/00.jpg";
 import guitar01 from "../assets/images/guitars/01.jpg";
@@ -19,67 +21,39 @@ import guitar07 from "../assets/images/guitars/07.jpg";
 import guitar08 from "../assets/images/guitars/08.jpg";
 import guitar09 from "../assets/images/guitars/09.jpg";
 
+const guitars = [
+  { image: guitar00, text: "guitars.g00" },
+  { image: guitar01, text: "guitars.g01" },
+  { image: guitar02, text: "guitars.g02" },
+  { image: guitar03, text: "guitars.g03" },
+  { image: guitar04, text: "guitars.g04" },
+  { image: guitar05, text: "guitars.g05" },
+  { image: guitar06, text: "guitars.g06" },
+  { image: guitar07, text: "guitars.g07" },
+  { image: guitar08, text: "guitars.g08" },
+  { image: guitar09, text: "guitars.g09" },
+];
+
 const GuitarPage: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <div>
-      <HamburgerMenuContainer />
-      <SubPageContainer>
-        <AnimatedCard><CardContainer>
-          <CardImage src={guitar00} alt="Sample" />
-        <CardText>{t("guitars.g00")}</CardText>
-        </CardContainer></AnimatedCard>
-        <AnimatedCard><CardContainer>
-          <CardImage src={guitar01} alt="Sample" />
-          <CardText>{t("guitars.g01")}</CardText>
-        </CardContainer></AnimatedCard>
-        <AnimatedCard><CardContainer>
-          <CardImage src={guitar02} alt="Sample" />
-          <CardText>{t("guitars.g02")}</CardText>
-        </CardContainer></AnimatedCard>
-        <AnimatedCard><CardContainer>
-          <CardImage src={guitar03} alt="Sample" />
-          <CardText>
-            {t("guitars.g03")}
-          </CardText>
-        </CardContainer></AnimatedCard>
-        <AnimatedCard><CardContainer>
-          <CardImage src={guitar04} alt="Sample" />
-          <CardText>
-            {t("guitars.g04")}
-          </CardText>
-        </CardContainer></AnimatedCard>
-        <AnimatedCard><CardContainer>
-          <CardImage src={guitar05} alt="Sample" />
-          <CardText>
-            {t("guitars.g05")}
-          </CardText>
-        </CardContainer></AnimatedCard>
-        <AnimatedCard><CardContainer>
-          <CardImage src={guitar06} alt="Sample" />
-          <CardText>{t("guitars.g06")}</CardText>
-        </CardContainer></AnimatedCard>
-        <AnimatedCard><CardContainer>
-          <CardImage src={guitar07} alt="Sample" />
-          <CardText>
-            {t("guitars.g07")}
-          </CardText>
-        </CardContainer></AnimatedCard>
-        <AnimatedCard><CardContainer>
-          <CardImage src={guitar08} alt="Sample" />
-          <CardText>
-           {t("guitars.g08")}
-          </CardText>
-        </CardContainer></AnimatedCard>
-        <AnimatedCard><CardContainer>
-          <CardImage src={guitar09} alt="Sample" />
-          <CardText>
-            {t("guitars.g09")}
-          </CardText>
-        </CardContainer></AnimatedCard>
-      </SubPageContainer>
-    </div>
+    <>
+      <PageHeader>
+        <PageTitle>{t("nav.guitars")}</PageTitle>
+        <PageIntro>{t("guitars.intro")}</PageIntro>
+      </PageHeader>
+      <CardGrid>
+        {guitars.map(({ image, text }) => (
+          <AnimatedCard key={text}>
+            <CardContainer>
+              <CardImage src={image} alt={t(text)} loading="lazy" />
+              <CardText>{t(text)}</CardText>
+            </CardContainer>
+          </AnimatedCard>
+        ))}
+      </CardGrid>
+    </>
   );
 };
 

@@ -1,40 +1,38 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FaBars } from 'react-icons/fa';
-import { HamburgerMenuContainerWrapper, DropdownMenu, MenuItem, MenuDivider, LanguageOptions, LangOption } from '../styles/HamburgerMenuStyles';
+import { FiMenu, FiX } from 'react-icons/fi';
+import { HamburgerMenuContainerWrapper, DropdownMenu, MenuItem } from '../styles/HamburgerMenuStyles';
+import { IconButton } from '../styles/LayoutStyles';
+import { navItems } from './navItems';
 
 const HamburgerMenuContainer: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const navigate = useNavigate();
-  const { t, i18n } = useTranslation();
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
-  const handleMenuItemClick = (path: string) => {
-    navigate(path);
-    setMenuOpen(false);
-  };
+  useEffect(() => {
+    if (!menuOpen) return;
+    const handleClickOutside = (event: MouseEvent) => {
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [menuOpen]);
 
   return (
-    <HamburgerMenuContainerWrapper>
-      <FaBars onClick={toggleMenu} />
+    <HamburgerMenuContainerWrapper ref={wrapperRef}>
+      <IconButton onClick={() => setMenuOpen(!menuOpen)} aria-label={t('common.menu')} aria-expanded={menuOpen}>
+        {menuOpen ? <FiX /> : <FiMenu />}
+      </IconButton>
       {menuOpen && (
         <DropdownMenu>
-          <MenuItem onClick={() => handleMenuItemClick('/')}>{t('nav.home')}</MenuItem>
-          <MenuItem onClick={() => handleMenuItemClick('/gears')}>{t('nav.gears')}</MenuItem>
-          <MenuItem onClick={() => handleMenuItemClick('/guitars')}>{t('nav.guitars')}</MenuItem>
-          <MenuDivider />
-          <LanguageOptions>
-            <LangOption $active={i18n.resolvedLanguage === 'en'} onClick={() => i18n.changeLanguage('en')}>
-              EN
-            </LangOption>
-            <LangOption $active={i18n.resolvedLanguage === 'zh'} onClick={() => i18n.changeLanguage('zh')}>
-              中文
-            </LangOption>
-          </LanguageOptions>
+          {navItems.map(({ path, label }) => (
+            <MenuItem key={path} to={path} end onClick={() => setMenuOpen(false)}>
+              {t(label)}
+            </MenuItem>
+          ))}
         </DropdownMenu>
       )}
     </HamburgerMenuContainerWrapper>

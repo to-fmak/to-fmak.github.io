@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 const slideDown = keyframes`
   from {
@@ -12,75 +13,40 @@ const slideDown = keyframes`
 `;
 
 export const HamburgerMenuContainerWrapper = styled.div`
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 20;
+  position: relative;
+  display: none;
 
-  svg {
-    font-size: 1.8rem;
-    cursor: pointer;
-  }
-
-  @media (max-width: 768px) {
-    top: 0.5rem;
-    right: 0.5rem;
-
-    svg {
-      font-size: 1.3rem;
-      border: 2px solid #333;
-      border-radius: 8px;
-      padding: 4px;
-      background-color: #fff;
-    }
+  @media (max-width: 640px) {
+    display: block;
   }
 `;
 
-export const DropdownMenu = styled.div`
+export const DropdownMenu = styled.nav`
   position: absolute;
-  top: 2rem;
+  top: calc(100% + 8px);
   right: 0;
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  z-index: 10;
+  min-width: 180px;
+  padding: 0.375rem;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-card);
   animation: ${slideDown} 0.2s ease forwards;
 `;
 
-export const MenuItem = styled.div`
-  padding: 1rem;
-  cursor: pointer;
-  font-size: 1rem;
+export const MenuItem = styled(NavLink)`
+  display: block;
+  padding: 0.625rem 0.875rem;
+  border-radius: 8px;
+  color: var(--color-text);
+  text-decoration: none;
+
   &:hover {
-    background-color: #f0f0f0;
+    background-color: var(--color-accent-soft);
   }
-`;
 
-export const MenuDivider = styled.div`
-  height: 1px;
-  background-color: #e0e0e0;
-  margin: 0.5rem 0;
-`;
-
-export const LanguageOptions = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  padding: 0.75rem 1rem;
-`;
-
-export const LangOption = styled.button<{ $active: boolean }>`
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 0.9rem;
-  font-weight: ${(props) => (props.$active ? '600' : '400')};
-  color: ${(props) => (props.$active ? '#333' : '#999')};
-  transition: color 0.2s ease;
-  white-space: nowrap;
-
-  &:hover {
-    color: #333;
+  &.active {
+    color: var(--color-accent);
+    font-weight: 600;
   }
 `;

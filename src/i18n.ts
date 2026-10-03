@@ -10,13 +10,21 @@ const resources = {
         gears: 'Gears',
         guitars: 'Guitars',
       },
+      common: {
+        toggleTheme: 'Toggle dark mode',
+        menu: 'Menu',
+      },
       home: {
         title: 'Software Engineer',
         viewGithub: 'View GitHub',
+        aboutHeading: 'About',
+        onTheWebHeading: 'On the web',
+        exploreHeading: 'Explore',
         description:
           "Hi, I'm Wenzhang, a Cloud DevOps Engineer and Full Stack Developer based in Japan. I'm also a passionate guitarist and DTM enthusiast. To learn more about my work experience, feel free to visit my GitHub and tech blogs. Don't hesitate to reach out to me through any of the following platforms.",
       },
       gears: {
+        intro: 'My desk setups over the years and the gear I use every day.',
         setup2026: 'My Desk Setup 2026 ~',
         setup2025: 'My Desk Setup 2025 ~ ',
         setup2024: 'My Desk Setup 2024 ~',
@@ -37,6 +45,7 @@ const resources = {
           'AirPods (2nd generation): I bought them in 2019 and have used them for many years. They are still in use and very durable.',
       },
       guitars: {
+        intro: "The guitars I've played over the years.",
         g00: 'Martin D-28 Street Legend(2025~)',
         g01: 'PRS(2024~)',
         g02: 'Yamaha Mini Guitar(2018~)',
@@ -57,17 +66,25 @@ const resources = {
         gears: '设备',
         guitars: '吉他',
       },
+      common: {
+        toggleTheme: '切换深色模式',
+        menu: '菜单',
+      },
       home: {
         title: '软件工程师',
         viewGithub: '查看 GitHub',
+        aboutHeading: '关于我',
+        onTheWebHeading: '在网上找到我',
+        exploreHeading: '看看更多',
         description:
           '我是Wenzhang，一名常驻日本的云 DevOps 工程师和全栈开发者。我也是一名充满激情的吉他手和 DTM 爱好者。欲了解更多关于我的工作经验，欢迎访问我的 GitHub 和技术博客。随时可以通过以下任何平台与我联系。',
       },
       gears: {
-        setup2026: '我的桌面设置 2026 ~',
-        setup2025: '我的桌面设置 2025 ~ ',
-        setup2024: '我的桌面设置 2024 ~',
-        setup2023: '我的桌面设置 2022 ~ 2023',
+        intro: '这些年的桌面布置，以及我每天都在用的设备。',
+        setup2026: '我的桌面布置 2026 ~',
+        setup2025: '我的桌面布置 2025 ~ ',
+        setup2024: '我的桌面布置 2024 ~',
+        setup2023: '我的桌面布置 2022 ~ 2023',
         studioDisplay:
           'Studio Display（2026 款）：画面非常漂亮，内置音响的音效也很好。我之前一直用一台 2K 的显示器，换到 5K 后看着非常舒服。',
         ergotron: 'Ergotron LX：显示器支臂，非常结实耐用。',
@@ -83,6 +100,7 @@ const resources = {
           'AirPods（第二代）：我在 2019 年购买，使用多年，至今仍在使用，非常耐用。',
       },
       guitars: {
+        intro: '这些年我弹过的吉他。',
         g00: 'Martin D-28 Street Legend(2025~)',
         g01: 'PRS(2024~)',
         g02: 'Yamaha Mini Guitar(2018~)',
@@ -97,6 +115,10 @@ const resources = {
     },
   },
 };
+
+i18next.on('languageChanged', (lng) => {
+  document.documentElement.lang = lng;
+});
 
 i18next.use(LanguageDetector).use(initReactI18next).init({
   resources,
